@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>arca9 - Turorial.md</title><script type="text/javascript">
 //<![CDATA[
-window.__cfRocketOptions = {byc:0,p:0,petok:"c66b5c2391e18a940d78b60fade815bc0b92003c-1510758145-1800"};
+window.__cfRocketOptions = {byc:0,p:0,petok:"ed6bba08b66c9ae45ec0710fc8f186091b4394c5-1510758201-1800"};
 //]]>
 </script>
 <script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/84a23a00/cloudflare-static/rocket.min.js"></script>
@@ -14,7 +14,7 @@ window.__cfRocketOptions = {byc:0,p:0,petok:"c66b5c2391e18a940d78b60fade815bc0b9
 To represent a var value on an attribute (in <em>JSON</em>) or inside an <em>arca9</em> tag XML content, write in the following form:</p>
 <h5><a id="varname_9"></a><code>${var-name}</code></h5>
 <p> <br>
-=&gt; <em>Whitespaces inside brackets will be ignored</em></p>
+=&gt; <strong>Whitespaces inside brackets will be ignored</strong></p>
 <p><strong>Vars can also be stored in <em>JSON</em> files and imported by other arca9 components</strong><br>
 Example:</p>
 <pre><code>{
@@ -33,18 +33,15 @@ Example:</p>
 <h5><a id="myvarelement_or_myvalelement_30"></a><code>${myvar:element}</code> or <code>%{myval:element}</code></h5>
 <ul>
 <li>Example 1: array value element on index 8: <strong><code>%{val:8}</code></strong></li>
-<li>Example 2: object var attribute ‘age’: <strong><code>${var:age}</code></strong></li>
-<li></li>
-</ul>
-<p><strong>The elements can be acessed recursively, this means you can access an array’s element on index 0 (that is also an array or object), then get the element on index 3 of that element. This is also valid for objects or arrays inside objects and vice-versa.</strong></p>
-<ul>
+<li>Example 2: object var attribute ‘age’: <strong><code>${var:age}</code></strong><br>
+<strong>The elements can be acessed recursively, this means you can access an array’s element on index 0 (that is also an array or object), then get the element on index 3 of that element. This is also valid for objects or arrays inside objects and vice-versa.</strong></li>
 <li>Example 1: <strong><code>${var:3:age}</code></strong></li>
 <li>Example 2 <strong><code>%{val:4:2:0}</code></strong></li>
 <li>Example 3 <strong><code>${var:employees:josh:address}</code></strong><br>
  </li>
 </ul>
 <hr>
-<h3><a id="Arca9_special_characters_equivalents_40"></a>Arca9 special characters equivalents</h3>
+<h3><a id="Arca9_special_characters_equivalents_39"></a>Arca9 special characters equivalents</h3>
 <ul>
 <li><strong><code>&amp;</code></strong> becomes <strong><code>&amp;0</code></strong></li>
 <li><strong><code>$</code></strong> becomes <strong><code>&amp;1</code></strong></li>
@@ -54,46 +51,46 @@ Example:</p>
  </li>
 </ul>
 <hr>
-<h2><a id="Arca9_tags_48"></a>Arca9 tags</h2>
-<h3><a id="Arca9_component_49"></a>Arca9 component</h3>
-<h5><a id="arca9component_50"></a><code>&lt;arca9-component&gt;</code></h5>
+<h2><a id="Arca9_tags_47"></a>Arca9 tags</h2>
+<h3><a id="Arca9_component_48"></a>Arca9 component</h3>
+<h5><a id="arca9component_49"></a><code>&lt;arca9-component&gt;</code></h5>
 <p>Pherhaps the main feature in <em>arca9</em> due to it’s useful features. A component is nothing more than an HTML element, but represented in JSON. Why and ahw’s special in that? First of all, storing the component in JSON let’s you declare your attributes in a better and simplier way than XML. Also, the key point about components is that they are dependency-based. What does that mean? It means that you can build a component and make it dependant to other components or scripts, that will be automatically loaded and included in the build process.</p>
 <p>And this is not the only feature. Components can import vars and receive values(arguments). Vars can be imported from files and/or passed in the <code>build()</code> method from _arca9, and they are intended to be used globally by all tags. Values are passed in the XML tag, and are used only in the requested component. Why values? Imagine that you want to reuse the button many times in your site, but it’s content is “Download”, and it’s color is only <em>green</em>. You want the button to have a different content and color for each part of your site. How do you do this? Copying and pasting the button and changing it? <strong>No way!</strong> You can use values and pass them to the button directly in the <code>&lt;arca9-component&gt;</code> tag. By doing this you can reuse your button multiple times while passing different values every time.</p>
 <p><strong>Example</strong>: Take a  <code>&lt;button&gt;</code> for example.This <strong>button</strong> will need a script to be ran when the user clicks on it. It also will need a style. The <em>arca9</em> component supports both script and style dependency. How does this works? You will declare the JSON files representating the script and the style in the JSON component file, and <em>arca9</em> will check if it was imported or not. If not, them, if you specified a tag, the script and the style will be imported directly to the tag, otherwise it will seek for the <code>&lt;head&gt;</code> tag. The style can also be included in the component itself, and will be transformed in an attribute, but it’s recommended that you use script-dependence.</p>
-<h4><a id="Tag_attributes_56"></a>Tag attributes</h4>
-<h5><a id="src_57"></a><code>src</code>:</h5>
+<h4><a id="Tag_attributes_55"></a>Tag attributes</h4>
+<h5><a id="src_56"></a><code>src</code>:</h5>
 <p><strong>The component’s JSON file source</strong></p>
-<h5><a id="valuex__optional__59"></a><code>value-x</code> (<em>optional</em>)</h5>
+<h5><a id="valuex__optional__58"></a><code>value-x</code> (<em>optional</em>)</h5>
 <p><strong>The value with name “x” (can be any name) that will be passed to the component builder</strong></p>
-<h4><a id="JSON_file_attributes_62"></a>JSON file attributes</h4>
-<h5><a id="import_63"></a><code>import</code></h5>
+<h4><a id="JSON_file_attributes_61"></a>JSON file attributes</h4>
+<h5><a id="import_62"></a><code>import</code></h5>
 <p><strong>An array containing strings of <em>var</em> files to be imported (without .json in the name)</strong></p>
-<h5><a id="tagname_66"></a><code>tag-name</code></h5>
+<h5><a id="tagname_65"></a><code>tag-name</code></h5>
 <p><strong>String containing the component tag name</strong></p>
-<h5><a id="selfclosing_69"></a><code>self-closing</code></h5>
+<h5><a id="selfclosing_68"></a><code>self-closing</code></h5>
 <p><strong>Boolean value indicating if the tag is self closing or not</strong></p>
 <hr>
 <p><strong><em>Question</em></strong> Why can’t arca9 just detect if the component has content and, if not,<br>
 make it automatically self-closing?</p>
 <p><strong><em>Answer</em></strong>: What if you want to create a <code>&lt;div&gt;</code> component and you want that div’s content to be empty? If arca9 automatically made the tag self-closing you would have to use a “hack”, by adding an empty content. Not a very good pratice.</p>
 <hr>
-<h5><a id="content_77"></a><code>content</code></h5>
+<h5><a id="content_76"></a><code>content</code></h5>
 <p><strong>An array containing either strings for text nodes, or objects representing sub-components inside the main component (<em>see below</em>)</strong><br>
 =&gt; <strong>Supports vars and values (sub-components also support both vars and values)</strong></p>
-<h5><a id="xmlcontent__replaces_content_81"></a><code>xml-content</code>  (replaces <code>content</code>)</h5>
+<h5><a id="xmlcontent__replaces_content_80"></a><code>xml-content</code>  (replaces <code>content</code>)</h5>
 <p><strong>String representing valid XML (please note that when using <code>xml-content</code>, <code>content</code> will be ignored. Also, <code>xml-content</code> doesn’t support sub-components</strong><br>
 =&gt; <strong>Supports vars and values</strong></p>
-<h5><a id="attr_85"></a><code>attr</code></h5>
+<h5><a id="attr_84"></a><code>attr</code></h5>
 <p><strong>Object with keys and values representing the tag attributes and it’s values (values must be strings)</strong><br>
 =&gt; <strong>Supports tags and values</strong></p>
-<h5><a id="style_90"></a><code>style</code></h5>
+<h5><a id="style_89"></a><code>style</code></h5>
 <p><strong>Same as <code>attr</code>, keys and values representing style (css) attributes</strong><br>
 =&gt; <strong>Supports vars and values</strong></p>
 <hr>
 <p><strong><em>Question</em></strong>: Why style goes outside <code>attr</code> instead of being just a key-val pair, since <code>style</code> is actually an attribute?</p>
 <p><strong><em>Answer</em></strong>: For two reasons. First, style is different from other attributes, it is like “embedded css” in the tag, also it represents the tag appearance, making it an speacial attribute. Second reason, <code>style</code> attributes have keys and vals representing css attributes, so <code>style</code> has to be an object, and if it was inside <code>attr</code>, it would break the string values rule. Also, it adds more legibility to the <em>JSON</em> component, separing style (that is a special attribute, as said before), from the rest of normal attributes.</p>
 <hr>
-<h5><a id="dependencies_optional_102"></a><code>dependencies</code> (optional)</h5>
+<h5><a id="dependencies_optional_101"></a><code>dependencies</code> (optional)</h5>
 <p><strong>An object representing script/style dependencies that contains two attributes:</strong></p>
 <ul>
 <li><strong>Script</strong>: an array containing script <em>JSON</em> files that the component depends on.</li>
@@ -101,11 +98,11 @@ make it automatically self-closing?</p>
 =&gt; <strong>File names in the arrays go without <em>.json</em> extension</strong></li>
 </ul>
 <hr>
-<h3><a id="Subcomponents_108"></a>Sub-components</h3>
+<h3><a id="Subcomponents_107"></a>Sub-components</h3>
 <p>Sub-components can be written in two ways:</p>
-<h4><a id="Content_components_111"></a>Content components</h4>
+<h4><a id="Content_components_110"></a>Content components</h4>
 <p>This sub-components object have all the same attributes as components, except for <code>import</code>. Sub-components with content also inheirit vars and values from their parent components.</p>
-<h4><a id="External_component_113"></a>External component</h4>
+<h4><a id="External_component_112"></a>External component</h4>
 <p>This sub-component object will only have to attributes:</p>
 <ul>
 <li><strong><code>src</code></strong>: The <em>JSON</em> file (with extension) representing the sub-component</li>
@@ -152,77 +149,77 @@ border-style: solid; border-color: #2ecc71; border-width: 7px; background-color:
 </code></pre>
 <p>=&gt; <strong>Please note that the XML generated by arca9 is not formatted, you will need to format it using a tool or manually</strong></p>
 <hr>
-<h3><a id="Arca9_var_161"></a>Arca9 var</h3>
-<h5><a id="arca9var_162"></a><code>&lt;arca9-var&gt;</code></h5>
+<h3><a id="Arca9_var_160"></a>Arca9 var</h3>
+<h5><a id="arca9var_161"></a><code>&lt;arca9-var&gt;</code></h5>
 <p> <br>
 The var tag in <em>arca9</em> has the purpose of representing <em>vars</em> inside the <em>XML</em> document, and not only inside <em>JSON</em> files or <em>arca9</em> tags content.</p>
-<h4><a id="Tag_attributes_166"></a>Tag attributes</h4>
-<h5><a id="name_167"></a><code>name</code></h5>
+<h4><a id="Tag_attributes_165"></a>Tag attributes</h4>
+<h5><a id="name_166"></a><code>name</code></h5>
 <p><strong>The represented variable name</strong></p>
-<h5><a id="dependencies_optional_170"></a><code>dependencies</code> (optional)</h5>
+<h5><a id="dependencies_optional_169"></a><code>dependencies</code> (optional)</h5>
 <p><strong>A string representing a list with the names of <em>JSON</em> files containing variables (without .json extension, separated by <code>;</code>  that will be imported</strong></p>
 <p><strong>The tag will be replaced by an text node containing the string format of the <em>var</em> value</strong></p>
 <hr>
-<h3><a id="Arca9_include_175"></a>Arca9 include</h3>
-<h5><a id="arca9include_176"></a><code>&lt;arca9-include&gt;</code></h5>
+<h3><a id="Arca9_include_174"></a>Arca9 include</h3>
+<h5><a id="arca9include_175"></a><code>&lt;arca9-include&gt;</code></h5>
 <p> <br>
 Simply includes the target file into the <em>XML</em>.</p>
-<h4><a id="Tag_attributes_180"></a>Tag attributes</h4>
-<h5><a id="src_181"></a><code>src</code></h5>
+<h4><a id="Tag_attributes_179"></a>Tag attributes</h4>
+<h5><a id="src_180"></a><code>src</code></h5>
 <p><strong>The source of the file that will be included (containing extension)</strong></p>
 <hr>
-<h3><a id="Arca9_scriptstyle_184"></a>Arca9 script/style</h3>
-<h5><a id="arca9script_or_arca9style_185"></a><code>&lt;arca9-script&gt;</code> or <code>&lt;arca9-style&gt;</code></h5>
+<h3><a id="Arca9_scriptstyle_183"></a>Arca9 script/style</h3>
+<h5><a id="arca9script_or_arca9style_184"></a><code>&lt;arca9-script&gt;</code> or <code>&lt;arca9-style&gt;</code></h5>
 <p>A script or style representaton that deals with script/style dependencies and support vars (except for external, see below).</p>
-<h4><a id="Tag_attributes_188"></a>Tag attributes</h4>
-<h5><a id="src_189"></a><code>src</code></h5>
+<h4><a id="Tag_attributes_187"></a>Tag attributes</h4>
+<h5><a id="src_188"></a><code>src</code></h5>
 <p><strong>The source for the script/style JSON file</strong></p>
-<h4><a id="JSON_file_attributes_192"></a>JSON file attributes</h4>
-<h5><a id="dependencies_193"></a><code>dependencies</code></h5>
+<h4><a id="JSON_file_attributes_191"></a>JSON file attributes</h4>
+<h5><a id="dependencies_192"></a><code>dependencies</code></h5>
 <ul>
 <li><strong>script: an array containing script JSON filenames that the script depends on (without .json extension</strong>)</li>
 <li><strong>style: an array containing style JSON filenames that the style depends on (without .json extension</strong>)</li>
 </ul>
-<h5><a id="content_197"></a><code>content</code></h5>
+<h5><a id="content_196"></a><code>content</code></h5>
 <p><strong>An array containing the content lines or an string containing the content</strong><br>
 =&gt; <strong>Supports vars</strong></p>
-<h5><a id="src_replaces_content_201"></a><code>src</code> (replaces <code>content</code>)</h5>
+<h5><a id="src_replaces_content_200"></a><code>src</code> (replaces <code>content</code>)</h5>
 <p><strong>A string with the script/style filename (with extension). If this attribute is present, the resulting that will not contain the file contents. Instead, it will indicate the filename as an external script/style</strong></p>
-<h5><a id="contentsrc_replaces_content_204"></a><code>content-src</code> (replaces <code>content</code>)</h5>
+<h5><a id="contentsrc_replaces_content_203"></a><code>content-src</code> (replaces <code>content</code>)</h5>
 <p><strong>Same as <code>src</code> but will include the external file content in the resulting tag</strong></p>
 <p>=&gt; <strong>Does not supports tags to avoid conflicts, like, for example, javascript’s template strings, that use the same format as vars: <code>${}</code></strong></p>
-<h5><a id="attr_optional_209"></a><code>attr</code> (optional)</h5>
+<h5><a id="attr_optional_208"></a><code>attr</code> (optional)</h5>
 <p><strong>Object with key-value pairs of strings representing the tag attributes</strong><br>
 =&gt; <strong>Supports vars</strong></p>
 <hr>
-<h3><a id="Arca9_times_213"></a>Arca9 times</h3>
-<h5><a id="arca9times_214"></a><code>&lt;arca9-times&gt;</code></h5>
+<h3><a id="Arca9_times_212"></a>Arca9 times</h3>
+<h5><a id="arca9times_213"></a><code>&lt;arca9-times&gt;</code></h5>
 <p>Repeats it’s content <em>n</em> times, as specified by the attribute (see below).</p>
-<h4><a id="Tag_attributes_217"></a>Tag attributes</h4>
-<h5><a id="value_218"></a><code>value</code></h5>
+<h4><a id="Tag_attributes_216"></a>Tag attributes</h4>
+<h5><a id="value_217"></a><code>value</code></h5>
 <p><strong>Contains a number representing the times that the content will be repeated</strong><br>
 =&gt; <strong>Accepts a var instead of a literal number, but the var must be a valid number (not integers, like doubles or floats will not cause any errors)</strong></p>
-<h5><a id="dependencies_optional_222"></a><code>dependencies</code> (optional)</h5>
+<h5><a id="dependencies_optional_221"></a><code>dependencies</code> (optional)</h5>
 <p><strong>A string representing a list with the names of JSON files containing variables (without .json extension, separated by <code>;</code> that will be imported</strong></p>
-<h4><a id="Tag_content_225"></a>Tag content</h4>
+<h4><a id="Tag_content_224"></a>Tag content</h4>
 <p><strong>Tags and text nodes that will be repeated</strong><br>
 =&gt; <strong>Supports vars and a special value: <code>%{i}</code>, that represents the number of the repetition</strong></p>
 <hr>
-<h3><a id="Arca9_foreach_229"></a>Arca9 foreach</h3>
-<h5><a id="arca9foreach_230"></a><code>&lt;arca9-foreach&gt;</code></h5>
+<h3><a id="Arca9_foreach_228"></a>Arca9 foreach</h3>
+<h5><a id="arca9foreach_229"></a><code>&lt;arca9-foreach&gt;</code></h5>
 <p>Similar to <code>&lt;arca9-times&gt;</code>, but iterates over an array or object variable, repeating the content</p>
-<h4><a id="Tag_attributes_233"></a>Tag attributes</h4>
-<h5><a id="name_234"></a><code>name</code></h5>
+<h4><a id="Tag_attributes_232"></a>Tag attributes</h4>
+<h5><a id="name_233"></a><code>name</code></h5>
 <p><strong>The name of the variable that will be iterated (must be array or object)</strong></p>
-<h5><a id="dependencies_optional_237"></a><code>dependencies</code> (optional)</h5>
+<h5><a id="dependencies_optional_236"></a><code>dependencies</code> (optional)</h5>
 <p><strong>A string representing a list with the names of JSON files containing variables (without .json extension, separated by <code>;</code> that will be imported</strong></p>
-<h4><a id="Tag_content_240"></a>Tag content</h4>
+<h4><a id="Tag_content_239"></a>Tag content</h4>
 <p><strong>Tags and text nodes that will be repeated</strong><br>
 =&gt; <strong>Supports vars and two special values: <code>%{k}</code> and <code>%{v}</code></strong></p>
 <p><strong><code>%{k}</code> is the current key in the iteration (index if the varuable is an array)<br>
 <code>%{v}</code> is the current value in the iteration</strong></p>
 <hr>
-<h4><a id="The_end_247"></a>The end.</h4>
+<h4><a id="The_end_246"></a>The end.</h4>
 <p>   Thanks for reading an I hope you liked <em>arca9</em>. If you did, please give the repository a star. Dont’ be afraid to make a pull request or open an issue if you feel you can help make <em>arca9</em> better. New features may be added in the future.</p>
 <blockquote>
 <p>npm install arca9</p>
