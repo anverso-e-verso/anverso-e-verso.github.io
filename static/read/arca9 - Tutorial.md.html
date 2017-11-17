@@ -1,6 +1,6 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>arca9 - Tutorial</title><script type="text/javascript">
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>arca9 - Tutorial.md</title><script type="text/javascript">
 //<![CDATA[
-window.__cfRocketOptions = {byc:0,p:0,petok:"bcb1051bbe310d510875b46811f260c91f4f2a2d-1510763028-1800"};
+window.__cfRocketOptions = {byc:0,p:0,petok:"a18eb6f41933b4afa11356549d2c487003685fd2-1510946412-1800"};
 //]]>
 </script>
 <script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/0e574bed/cloudflare-static/rocket.min.js"></script>
@@ -27,7 +27,7 @@ files used in the build process.</p>
 <hr>
 <h4><a id="Arca9_vars_and_values_23"></a>Arca9 vars and values</h4>
 <p><strong>Vars</strong>: can be passed as arguments in the <code>build</code> or <code>buildStr</code> methods, or can be imported from <em>JSON</em> files as shown below.<br>
-To represent a var value on an attribute (in <em>JSON</em>) or inside an <em>arca9</em> tag XML content, write in the following form:</p>
+To represent a var value on an attribute (in <em>JSON</em>) or inside an <em>arca9</em> tag XML content. Once imported, vars can be used by all tags (<em>components</em>, <em>foreach</em>, <em>etc…</em>) globally. To represent a <em>var</em>, write in the following format:</p>
 <h5><a id="varname_26"></a><code>${var-name}</code></h5>
 <p> <br>
 =&gt; <strong>Whitespaces inside brackets will be ignored</strong></p>
@@ -42,7 +42,7 @@ Example:</p>
 }
 </code></pre>
 <p> <br>
-<strong>Values</strong>: <em>values</em> are used with components, and are the “args” for those components values and attributes. Like <em>vars</em>, <em>values</em> can be used in attributes or <em>arca9</em> tags XML content. Values are represented as below:</p>
+<strong>Values</strong>: <em>values</em> are used with components, and are the “args” for those components values and attributes. Like <em>vars</em>, <em>values</em> can be used in attributes or <em>arca9</em> tags XML content. Unlike <em>vars</em>, <em>values</em> are only acessible to <em>components</em>, more specifically, to the <em>components</em> which tags received the values (they are like “arguments” passed to components). Values are represented as below:</p>
 <h5><a id="value_43"></a><code>%{value}</code></h5>
 <h3><a id="Acessing_vars_and_values_elements_45"></a>Acessing vars and values elements</h3>
 <p>If  a <em>var</em> or a <em>value</em> is an array or an object, you can refer to their elements in the following way:</p>
@@ -72,7 +72,7 @@ then get the element on index 3 of that element. This is also valid for objects 
 <h3><a id="Arca9_component_66"></a>Arca9 component</h3>
 <h5><a id="arca9component_67"></a><code>&lt;arca9-component&gt;</code></h5>
 <p>Pherhaps the main feature in <em>arca9</em> due to it’s useful features. A component is nothing more than an HTML element, but represented in JSON. Why and what’s special in that? First of all, storing the component in JSON let’s you declare your attributes in a better and simplier way than XML. Also, the key point about components is that they are dependency-based. What does that mean? It means that you can build a component and make it dependant to other components or scripts, that will be automatically loaded and included in the build process.</p>
-<p>And this is not the only feature. Components can import vars and receive values(arguments). Vars can be imported from files and/or passed in the <code>build()</code> method from _arca9, and they are intended to be used globally by all tags. Values are passed in the XML tag, and are used only in the requested component. Why values? Imagine that you want to reuse the button many times in your site, but it’s content is “Download”, and it’s color is only <em>green</em>. You want the button to have a different content and color for each part of your site. How do you do this? Copying and pasting the button and changing it? <strong>No way!</strong> You can use values and pass them to the button directly in the <code>&lt;arca9-component&gt;</code> tag. By doing this you can reuse your button multiple times while passing different values every time.</p>
+<p>And this is not the only feature. Components can import <em>vars</em> and receive <em>values</em> (“arguments”). Values are passed in the XML tag, and are used only in the requested component. Why values? Imagine that you want to reuse the button many times in your site, but it’s content is “Download”, and it’s color is only <em>green</em>. You want the button to have a different content and color for each part of your site. How do you do this? Copying and pasting the button and changing it? <strong>No way!</strong> You can use values and pass them to the button directly in the <code>&lt;arca9-component&gt;</code> tag. By doing this you can reuse your button multiple times while passing different values every time.</p>
 <p><strong>Example</strong>: Take a  <code>&lt;button&gt;</code> for example.This <strong>button</strong> will need a script to be ran when the user clicks on it. It also will need a style. The <em>arca9</em> component supports both script and style dependency. How does this works? You will declare the JSON files representating the script and the style in the JSON component file, and <em>arca9</em> will check if it was imported or not. If not, them, if you specified a tag, the script and the style will be imported directly to the tag, otherwise it will seek for the <code>&lt;head&gt;</code> tag. The style can also be included in the component itself, and will be transformed in an attribute, but it’s recommended that you use script-dependence.</p>
 <h4><a id="Tag_attributes_73"></a>Tag attributes</h4>
 <h5><a id="src_74"></a><code>src</code>:</h5>
