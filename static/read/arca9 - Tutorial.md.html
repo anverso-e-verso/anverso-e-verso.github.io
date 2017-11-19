@@ -50,13 +50,12 @@ ___
     }
 ___
 #### Arca9 vars and values
-**Vars**: can be passed as arguments in the `build` or `buildStr` methods, or can be imported from _JSON_ files as shown below.
-To represent a var value on an attribute (in _JSON_) or inside an _arca9_ tag XML content. Once imported, vars can be used by all tags (_components_, _foreach_, _etc..._) globally. To represent a _var_, write in the following format:
+**Vars**: can be passed as arguments in the `build` or `buildStr` methods, or can be imported from _JSON_ files as shown below. Vars can be used inside components JSON files or arca9 tags content. Once imported, vars can be used by all tags (_components_, _foreach_, _etc..._) globally. To represent a _var_, write in the following format:
 #### ${var-name}
 &nbsp;  
 =&gt; **Whitespaces inside brackets will be ignored**
 
-**Vars can also be stored in _JSON_ files and imported by other arca9 components**
+**Vars can also be stored in _JSON_ files and imported by other arca9 components**  
 Example:
 
     {
@@ -74,6 +73,7 @@ Example:
 ### Acessing vars and values elements
 If  a _var_ or a _value_ is an array or an object, you can refer to their elements in the following way:
 #### ${myvar:element} or %{myval:element}
+
 - Example 1: array value element on index 8: **`%{val:8}`**
 - Example 2: object var attribute 'age': **`${var:age}`**
 **The elements can be acessed recursively, this means you can access an array's element on index 0 (that is also an array or object), 
@@ -85,6 +85,7 @@ then get the element on index 3 of that element. This is also valid for objects 
 ___
 ### Arca9 options 
 Can be changed by modifying the var options in the `arca9` object.
+
 - **echo**: show build logs or not (`false` by default)
 - **debug**: shows debug output or not (`false` by default)
 - **cache**: JSON files caching is enabled or not (`true` by default)
