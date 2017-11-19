@@ -14,8 +14,10 @@
 
 
 ## Contents
+#### - Arca9 methods and vars
 #### - Arca9 vars and values
 #### - Acessing vars and values elements
+#### - Arca9 options
 #### - Arca9 special characters
 #### - Arca9 tags
 #### &nbsp;&nbsp;&nbsp;&nbsp; - Arca9 component
@@ -26,6 +28,26 @@
 #### &nbsp;&nbsp;&nbsp;&nbsp; - Arca9 foreach
 #### - The end
 &nbsp;
+___
+
+### Arca9 methods and vars
+    
+    Build methods
+    [] = optional
+    
+    arca9.build(fileName,[destName], [vars]) -> returns undefined
+                OR
+    arca9.buildStr(str, vars) -> returns String
+    
+    Vars
+    
+    options (explained below)
+    {
+        echo: false,
+        debug: false,
+        cache: true,
+        autoClearCache: true
+    }
 ___
 #### Arca9 vars and values
 **Vars**: can be passed as arguments in the `build` or `buildStr` methods, or can be imported from _JSON_ files as shown below.
@@ -60,6 +82,13 @@ then get the element on index 3 of that element. This is also valid for objects 
 - Example 2 **`%{val:4:2:0}`**
 - Example 3 **`${var:employees:josh:address}`**
 &nbsp;
+___
+### Arca9 options 
+Can be changed by modifying the var options in the `arca9` object.
+- **echo**: show build logs or not (`false` by default)
+- **debug**: shows debug output or not (`false` by default)
+- **cache**: JSON files caching is enabled or not (`true` by default)
+- **autoClearCache**: auto cache clear after build is enabled or not (`true` by default)
 ___
 ### Arca9 special characters equivalents
 - **`&`** becomes **`&0`**
