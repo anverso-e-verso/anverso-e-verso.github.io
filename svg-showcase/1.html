@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>1</title>	
+		<style>
+			@font-face {
+				font-family: Pacifico;
+				src: url('Pacifico-Regular.ttf');
+			}
+		
+			@keyframes cover-slide-out {
+				from {}
+				to {
+					transform: translateY(-85%);
+				}
+			}
+			
+			
+			html, body {
+				padding:0;
+				margin: 0;
+				height: 100%;
+			}
+			
+			body {
+				text-align: center;
+				vertical-align: middle;
+			}
+			
+			div#animation-outer-wrapper {
+				display: table;
+				height: 100%;
+				width: 100%;
+			}
+			
+			div#animation-outer-wrapper div#animation-inner-wrapper {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			
+			div#animation-outer-wrapper div#animation-inner-wrapper svg {
+				border: #000 dashed 1px;
+			}
+			
+			
+			button.animation-btn {
+				
+				border-radius: 12%;
+				-webkit-border-radius: 12%;
+				font-size: 1.5em;
+				font-family: Pacifico;
+				padding-right: 1.5vw;
+				padding-left: 1.5vw;
+				margin-top: 3vh;
+			}
+				
+			button.animation-btn.active {
+			
+				color: #e74c3c;
+				border: #e74c3c solid 3px;
+				background-color: #fff;
+				-webkit-transition: background-color 500ms linear, color 500ms linear;
+				-moz-transition: background-color 500ms linear, color 500ms linear;
+				-ms-transition: background-color 500ms linear, color 500ms linear;
+				-o-transition: background-color 500ms linear, color 500ms linear;
+				transition: background-color 500ms linear, color 500ms linear;
+			}
+			
+			button.animation-btn.active:hover {
+				cursor: pointer;
+				color: #fff;
+				background-color: #e74c3c;;
+			}
+			
+			button.animation-btn.inactive {
+				color: #bdc3c7;
+				background-color: #7f8c8d;
+				border: #7f8c8d solid 3px;
+			}
+			
+			div#animation-outer-wrapper div#animation-inner-wrapper svg.animate path#svg-cover {
+				animation-name: cover-slide-out;
+				animation-delay: 500ms;
+				animation-duration: 400ms;
+				animation-fill-mode: both;
+				animation-timing-function: ease-out;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="animation-outer-wrapper">
+			<div id="animation-inner-wrapper">
+
+				<svg xmlns="http://www.w3.org/2000/svg" style="isolation:isolate" width="453.543" height="566.929">
+					<path fill="#3498DB" d="M0 0h453.543v566.929H0z" id="svg-cover"/>
+				</svg>
+				
+				<br />
+				<button class="animation-btn active" onclick="startAnimation(this);">Start</button>
+			</div>
+		</div>
+		
+		<script>
+			var startAnimation = function(btn) {
+				var svg = document.getElementsByTagName("svg")[0];
+				
+				if(btn.classList.contains("inactive"))
+					return;
+				
+				svg.classList.add("animate");
+				btn.classList.remove("active");
+				btn.classList.add("inactive");
+			};
+		</script>
+	</body>
+</html>
