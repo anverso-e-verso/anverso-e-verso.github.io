@@ -118,8 +118,8 @@
           </li></ul>
       <a href="#" onclick="backToTop()" class="back-to-top">Top &#8648;</a><script>
   function backToTop() {
-    const main = document.getElementById("site-main");
-    main.scrollTop = 0;
+    document.body.scrollTop = 0; // For Safari
+	document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 </script>
 

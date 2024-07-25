@@ -481,7 +481,8 @@ ul.task-list li {
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px 1fr; }
+  grid-template-rows: 60px 1fr;
+  overflow-x: hidden; }
 
 /**
  * Site header
@@ -605,7 +606,7 @@ ul.task-list li {
 .site-body {
   display: grid;
   grid-template-columns: calc(1100px * 0.24) 1fr;
-  overflow: hidden; }
+  /*overflow: hidden;*/ }
   @media screen and (max-width: 900px) {
     .site-body {
       grid-template-columns: calc(1100px * 0.18) 1fr; } }
@@ -1076,7 +1077,7 @@ figcaption.align-center {
 
 .site-body-nosidebar {
   display: grid;
-  overflow: hidden; }
+  /*overflow: hidden;*/ }
 
 .author-content {
   margin-top: 2em;
