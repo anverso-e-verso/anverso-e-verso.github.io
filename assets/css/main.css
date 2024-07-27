@@ -1057,7 +1057,7 @@ figcaption.align-center {
   text-align: left;
   font-size: 28.8px; }
 
-.poem p {
+.poem > p {
   font-family: 'Cardo';
   font-size: 21.6px;
   text-align: left;
@@ -1136,3 +1136,13 @@ figcaption.align-center {
       margin-top: 1rem; }
       .poem-list li .post-excerpt p {
         margin-bottom: 0; }
+
+.poem > blockquote {
+  border: none;
+  text-align: right;
+  margin-bottom: 4em; }
+  .poem > blockquote p {
+    font-style: normal;
+    text-align: right; }
+    .poem > blockquote p em {
+      font-style: italic; }
