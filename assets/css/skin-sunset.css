@@ -88,7 +88,7 @@
 
 body {
   color: #222;
-  background-color: #e6d8ba; }
+  background-color: #d4cfc7; }
 
 a {
   color: #760000; }
@@ -99,7 +99,7 @@ a {
 
 blockquote {
   color: #373737;
-  border-left-color: #ccc5b4; }
+  border-left-color: #c2bfba; }
 
 pre,
 code {
@@ -115,22 +115,22 @@ pre {
 
 table {
   color: #505050;
-  border-color: #ccc5b4; }
+  border-color: #c2bfba; }
   table tr:nth-child(even) {
-    background-color: #ddcfb3; }
+    background-color: #ccc7bf; }
   table th {
-    background-color: #d8cbaf;
-    border-color: #b8ad95; }
+    background-color: #c7c3bb;
+    border-color: #aaa69f; }
   table td {
-    border-color: #ccc5b4; }
+    border-color: #c2bfba; }
 
 .site-header {
-  background-color: #e6d8ba;
-  border-top-color: #7b6e52;
-  border-bottom-color: #ccc5b4; }
+  background-color: #d4cfc7;
+  border-top-color: #6b665f;
+  border-bottom-color: #c2bfba; }
 
 .site-sidebar {
-  border-color: #ccc5b4; }
+  border-color: #c2bfba; }
 
 .site-title {
   color: #222; }
@@ -138,63 +138,63 @@ table {
     color: #222; }
 
 .site-nav {
-  background-color: #e6d8ba;
-  border-color: #b8ad95; }
+  background-color: #d4cfc7;
+  border-color: #aaa69f; }
   .site-nav .menu-icon > svg path {
-    fill: #7b6e52; }
+    fill: #6b665f; }
   .site-nav li a {
     color: #222; }
   .site-nav .dropdown-content {
-    background-color: #ccc5b4;
+    background-color: #c2bfba;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
 
 .post-list li {
-  border-bottom-color: #ccc5b4; }
+  border-bottom-color: #c2bfba; }
 
 .post-header {
-  border-bottom-color: #ccc5b4; }
+  border-bottom-color: #c2bfba; }
 
 .post-meta {
   color: #373737; }
 
 .post-footer {
-  border-color: #ccc5b4; }
+  border-color: #c2bfba; }
 
 .post-pagination {
-  border-color: #ccc5b4; }
+  border-color: #c2bfba; }
 
 ul.post-tags li {
-  background-color: #ccc5b4; }
+  background-color: #c2bfba; }
 
 .pagination li a, .pagination li div {
-  border-color: #ccc5b4; }
+  border-color: #c2bfba; }
 .pagination li div.pager-edge {
-  border: 1px dashed #ccc5b4; }
+  border: 1px dashed #c2bfba; }
 .pagination li a.previous-page:hover, .pagination li a.next-page:hover {
-  border-color: #b8ad95; }
+  border-color: #aaa69f; }
 
 .taxonomy-count {
   color: #373737; }
 
 .site-footer {
   color: #373737;
-  border-top-color: #ccc5b4; }
+  border-top-color: #c2bfba; }
 
 .sidebar-section {
-  border-bottom-color: #ccc5b4; }
+  border-bottom-color: #c2bfba; }
 
 .feed-subscribe a {
   color: #004e00; }
 
 .toc-title {
-  color: #e6d8ba;
-  background-color: #7b6e52;
-  border-color: #b8ad95; }
+  color: #d4cfc7;
+  background-color: #6b665f;
+  border-color: #aaa69f; }
 
 .toc-nav {
-  border-color: #b8ad95; }
+  border-color: #aaa69f; }
   .toc-nav ul li a {
     color: #222;
-    border-color: #b8ad95; }
+    border-color: #aaa69f; }
     .toc-nav ul li a:hover {
-      background-color: #ccc5b4; }
+      background-color: #c2bfba; }

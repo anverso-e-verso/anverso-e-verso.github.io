@@ -1055,11 +1055,11 @@ figcaption.align-center {
   font-family: 'Alegreya OPT';
   font-feature-settings: 'ss01';
   text-align: left;
-  font-size: 28.8px; }
+  font-size: 25.2px; }
 
 .poem > p {
   font-family: 'Cardo';
-  font-size: 21.6px;
+  font-size: 18px;
   text-align: left;
   margin-bottom: 21.6px; }
 
@@ -1073,7 +1073,7 @@ figcaption.align-center {
   font-family: 'Garamond'; }
 
 .home-author-list {
-  font-size: 14.4px; }
+  font-size: 18px; }
 
 .site-body-nosidebar {
   display: grid;
@@ -1128,10 +1128,10 @@ figcaption.align-center {
           font-size: 1.3rem; } }
       .poem-list li h2 .poem-excerpt {
         margin-bottom: 0;
-        font-size: 1rem; }
+        font-size: 1.2rem; }
         @media screen and (min-width: 1100px) {
           .poem-list li h2 .poem-excerpt {
-            font-size: 1.1rem; } }
+            font-size: 1.3rem; } }
     .poem-list li .post-excerpt {
       margin-top: 1rem; }
       .poem-list li .post-excerpt p {
