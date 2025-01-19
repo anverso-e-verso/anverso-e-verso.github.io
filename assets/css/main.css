@@ -1093,13 +1093,15 @@ figcaption.align-center {
   grid-template-rows: 0.2fr 1fr;
   grid-template-areas: ". ." ". .";
   grid-auto-flow: column;
-  gap: 0px 40px; }
+  gap: 0px 40px;
+  align-items: center; }
 
 .author-content .author-pic {
   grid-row: span 2; }
 
 .author-content .author-pic img {
-  height: 600px; }
+  height: 40vw;
+  width: auto; }
 
 .author-content .author-name {
   font-size: 25.2px;
